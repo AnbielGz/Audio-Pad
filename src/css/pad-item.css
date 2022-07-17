@@ -1,0 +1,28 @@
+/*Pad Item*/
+
+.pad-item {
+    background: rgb(31, 31, 31);
+    color: #fff;
+    border: 2px rgb(68, 68, 68) solid;
+    border-radius: 5px;
+    padding: 40px 35px; 
+    transition: all 0.4s linear;
+    margin: 0;
+    width: 100%;
+}
+
+.pad-item:hover {
+    background: rgb(58, 58, 58);
+    color: #fff;
+}
+
+/*Pad Item Pressed*/
+.pad-item-pressed {
+    background: rgb(68, 68, 68);
+    color:rgb(172, 41, 41);
+}
+
+.pad-item-pressed:hover {
+    color:rgb(212, 41, 41);
+}
+

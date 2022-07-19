@@ -1,0 +1,35 @@
+.context-menu {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+}
+
+.context-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.context-menu-item {
+    cursor: pointer;
+    display: block;
+    padding: 6px 10px;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.context-menu-item:hover {
+    background: #ccc;
+}
+
+.context-menu-item > a {
+    color: #333;
+    display: block;
+    text-decoration: none;
+}

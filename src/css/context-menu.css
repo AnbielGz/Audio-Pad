@@ -1,13 +1,31 @@
+
+
 .context-menu {
     background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
     position: fixed;
-    display: flex;
-    justify-content: space-between;
+    padding: 8px 0px;
+    min-width: 112px;
+    max-width: 280px;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 4px;
+    transform: scale(0.8);
+    transition: transform 0.12s cubic-bezier(0.0, 0.0, 0.2, 1), opacity 0.03s linear;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    will-change: visibility opacity transform;
 }
+
+    .context-menu-open {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+    .context-menu-isClose {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
 
 .context-menu-list {
     list-style: none;
@@ -17,11 +35,25 @@
 }
 
 .context-menu-item {
-    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
     display: block;
-    padding: 6px 10px;
-    width: 100%;
-    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 0 16px;
+    line-height: 48px;
+    user-select: none;
+    -ms-user-select: none;
+    background-color: inherit;
+    transition: background-color .10s linear;
+}
+
+.context-menu-item .context-menu-text {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .context-menu-item:hover {
@@ -32,4 +64,32 @@
     color: #333;
     display: block;
     text-decoration: none;
+}
+
+.context-menu-separator {
+    display: block;
+    margin: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.12); 
+}
+
+/*Animations*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mainanimation {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: calc(20 * 6 / 2);
+    }
+    100% {
+        height: calc(20 * 6);
+    }
 }

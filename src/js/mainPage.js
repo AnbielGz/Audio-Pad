@@ -1,10 +1,11 @@
-
-document.body.addEventListener('click', () => {
-  if (ContextMenu.menuIsOpen) {
-    ContextMenu.closeMenu()
-  }
-})
-
+const menu = new ContextMenu(
+  { items: [
+    { label: 'Asignar archivo', action: () => { console.log('Abrir dialogo') } },
+    { label: 'Volumen', action: () => { console.log('Ajustar Volumen') } },
+    { separator: true },
+    { label: 'Eliminar', action: () => { console.log('Eliminar') } },
+  ]}
+)
 
 let btns = document.getElementsByTagName('button')
 
@@ -21,14 +22,10 @@ for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener('mousedown', (e) => { 
     e.preventDefault()
 
-    if (e.button === 2) {
-      ContextMenu.showMenu(e, { items: [
-      { text: 'Copiar', action: () => { console.log('Copiar') } },
-      { text: 'Pegar', action: () => { console.log('Pegar') } },
-      { text: 'Cortar', action: () => { console.log('Cortar') } },
-      { text: 'Deshacer', action: () => { console.log('Deshacer') } },
-    ]})
+    if (e.button === 2) { 
+      
+      menu.showMenu(e)
     }
-    
+      
   })
 }

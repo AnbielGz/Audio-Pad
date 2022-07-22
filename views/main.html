@@ -6,58 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!--Styles-->
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+
     <link rel="stylesheet" href="../src/css/bootstrap.css">
     <link rel="stylesheet" href="../src/css/context-menu.css">
     <link rel="stylesheet" href="../src/css/pad-item.css">
+    <link rel="stylesheet" href="../src/css/player.css">
 
     <title>Audio Palette</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md p-1 m-1" id="01">
-                <button class="pad-item">Empty</button>
+            <div class="col-md p-1 m-1">
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             
         </div>
         <div class="row">
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
         
         </div>
         <div class="row">
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             <div class="col-md p-1 m-1" >
-                <button class="pad-item">Empty</button>
+                <div class="pad-item">Empty</div>
             </div>
             
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="container-fluid p-2 rounded shadow player">
+                    <div class="player__view">
+                        <label class="player__text">Example Name</label>
+                        <span id="currentTime">0:04 - 2:45 </span>
+
+
+                    </div>
+                    
+                   <input type="range" class="form-range" id="pBar" value="0">
+                    <div class="player__controls">
+
+                        <button class="player__btn repeat" id="btnRepeat">
+                            <i class="fas fa-repeat"></i> Repeat
+                        </button>
+                        <button class="player__btn" id="btnStop">
+                            <i class="fas fa-stop"></i> 
+                        <button class="player__btn" id="btnNext">
+                            <i class="fas fa-forward"></i>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                
+            </div>
         </div>
     </div>
     

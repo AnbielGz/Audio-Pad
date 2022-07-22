@@ -1,31 +1,32 @@
 const menu = new ContextMenu(
   { items: [
-    { label: 'Asignar archivo', action: () => { console.log('Abrir dialogo') } },
-    { label: 'Volumen', action: () => { console.log('Ajustar Volumen') } },
+    { label: 'Asignar archivo', icon: 'fa-file', action: () => { console.log('Abrir dialogo') } },
+    { label: 'Volumen', icon: 'fa-music', action: () => { console.log('Ajustar Volumen') } },
     { separator: true },
-    { label: 'Eliminar', action: () => { console.log('Eliminar') } },
+    { label: 'Eliminar', icon: 'fa-trash', action: () => { console.log('Eliminar') } },
   ]}
 )
 
-let btns = document.getElementsByTagName('button')
 
-// Recorre el array de botones y le añade un evento click
-for (let i = 0; i < btns.length; i++) {
-  btns[i].addEventListener('click', (e) => {
-    if (btns[i].classList.contains('pad-item-pressed')) {
-        btns[i].classList.remove('pad-item-pressed')
-    } else {
-        btns[i].classList.add('pad-item-pressed')
-    }
+// Obtenemos los divs con la clase 'pad-item'
+const padItems = document.querySelectorAll('.pad-item')
+
+// Iteramos sobre los divs
+padItems.forEach(padItem => { 
+
+  padItem.addEventListener('click', (e) => {
+    if (padItem.classList.contains('pad-item--pressed')) {
+      padItem.classList.remove('pad-item--pressed')
+    } else { padItem.classList.add('pad-item--pressed') }
   })
 
-  btns[i].addEventListener('mousedown', (e) => { 
+  padItem.addEventListener('mousedown', (e) => {
+
     e.preventDefault()
 
-    if (e.button === 2) { 
-      
+    // Compruba que se ha presionado el boton izquierdo
+    if (e.button === 2) {
       menu.showMenu(e)
     }
-      
   })
-}
+})

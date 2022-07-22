@@ -26,7 +26,18 @@ class ContextMenu {
                 menuItem.classList.add('context-menu-item')
 
                 if (item.icon) { 
-                    menuItem.appendChild(document.createElement('img').src(item.icon))
+                    // comprueba si se el contenido es una clase de Fontawesone o una ruta de archivo
+                    if (item.icon.includes('fa')) { 
+                        let icon = document.createElement('i')
+                        icon.classList.add('fas', item.icon)
+                        icon.style.marginRight = '10px'
+                        menuItem.appendChild(icon)
+                    } else { 
+                        let img = document.createElement('img').src(item.icon)
+                        img.style.marginRight = '10px'
+                        menuItem.appendChild(img) 
+                    }
+                    
                 }
 
                 if (item.label.length > 0) { 
@@ -60,7 +71,7 @@ class ContextMenu {
     }
 
     showMenu(elem) {
-        //this.closeMenu()
+
         this.menuIsOpen = true
 
         this.cmWrapper.classList.add('context-menu-open')

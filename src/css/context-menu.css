@@ -39,7 +39,8 @@
     font-size: 16px;
     font-weight: 400;
     color: #444444;
-    display: block;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     padding: 0 16px;
     line-height: 48px;
@@ -48,6 +49,7 @@
     background-color: inherit;
     transition: background-color .10s linear;
 }
+
 
 .context-menu-item .context-menu-text {
     display: block;

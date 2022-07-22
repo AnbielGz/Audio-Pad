@@ -8,6 +8,7 @@
     padding: 45px 33px; 
     transition: all 0.4s linear;
     margin: 0;
+    cursor: pointer;
     width: 100%;
 }
 
@@ -17,12 +18,12 @@
 }
 
 /*Pad Item Pressed*/
-.pad-item-pressed {
+.pad-item--pressed {
     background: rgb(68, 68, 68);
     color:rgb(172, 41, 41);
+    border: 2px rgb(172, 41, 41) solid;
 }
 
-.pad-item-pressed:hover {
-    color:rgb(212, 41, 41);
-}
-
+    .pad-item--pressed:hover {
+        color:rgb(212, 41, 41);
+    }
